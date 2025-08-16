@@ -1,34 +1,30 @@
-function validate(event) {
+function validateForm (event) {
 	event.preventDefault();
 
-	const uname = event.target.uname.value;
 	const pass = event.target.pass.value;
+	const uname = event.target.uname.value;
 	const email = event.target.email.value;
 
-	// console.log(uname, pass, email);
-
-
-	if(uname == "" || pass == "" || email == "")
+	if(pass == "" || uname == "" || email == "")
 	{
-		alert("Fields cannot be empty!");
+		alert("Fields Can no be empty!");
 		return false;
 	}
 
 	if(pass.length < 6)
 	{
-		alert("Password must have at least 6 characters!")
+		alert("Password must have at least 6 characters!");
 		return false;
 	}
 
 	if(!email.includes('@') || !email.includes('.'))
 	{
-		alert("Inavlid Email!");
+		alert("Invalid Email!");
 		return false;
 	}
-
 
 	return true;
 
 
-
+	// console.log(pass, uname, email);
 }
